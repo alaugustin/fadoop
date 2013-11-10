@@ -1,0 +1,7 @@
+section {
+	border: 1px solid #FF0000;
+	/*padding: 40px;*/
+}
+.col-md-9 {
+	border-right: 3px solid #808080;
+}
