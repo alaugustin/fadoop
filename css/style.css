@@ -1,27 +1,34 @@
-body * {font-size: 62.5%;}
-h1 {
-  font-size: 10em;
-}
-
-nav ul.list-inline li a {
-  font-size: 15em;
-}
-div#personalInfo h2 {
-  font-size: 25em;
-}
-div#personalInfo li, #companyInfo li {
-  font-size: 25em;
-}
-div.col-md-4 h3 {
-	font-size: 15em;
-}
-#locationList li {
-	font-size: 15em;
-}
-
+body {background: #EDEDED;}
 header, section {
-	border: 1px solid #FF0000;
-	/*padding: 40px;*/
+	/*border: 1px solid #FF0000;
+	padding: 40px;*/
+}
+header nav {
+  background: none repeat scroll 0 0 #FFFFFF;
+  border-bottom: 3px solid #F0F0F0;
+  padding: 10px 0;
+}
+nav ul {
+  font-size: 1.75em;
+  margin: 10px 0;
+}
+nav ul > li {
+  border-right: 1px solid #F0F0F0;
+  padding: 0 15px;
+}
+nav ul > li:last-child {
+    border: none;
+    padding: 0 15px;
+}
+#greeterText {
+  margin: auto 50px;
+}
+section {background: #fff;}
+section > div {
+  border-right: 1px solid #F0F0F0;
+}
+section > div:last-child {
+    border: none;
 }
 .col-md-9 {
 	border-right: 3px solid #808080;

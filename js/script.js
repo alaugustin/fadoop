@@ -4,6 +4,15 @@ var jqxhr = $.getJSON("assets/data.json", function (data) {
 	console.log("success");
 })
 	.done(function (data) {
+	
+		var navSection = '<nav role="main"><ul class="list-inline text-center">';
+		$.each(data, function (index, obj) {
+			var profileId = obj.id,
+				profileName = obj.name;
+
+			navSection += '<li><a data-id="' + profileId + '"  href="javascript:void(0);">' + profileName + '</a></li>';
+		});
+		navSection += '</ul></nav>';
 
 		var mainSection = '<main role="main">';
 		$.each(data, function (index, obj) {
@@ -34,26 +43,17 @@ var jqxhr = $.getJSON("assets/data.json", function (data) {
 				'<li><span class="glyphicon glyphicon-earphone"></span>&nbsp;' + profilePhone + '</li>' +
 				'</ul></address></div>' +
 				
-				
-				
-				
-				
-				'<div class="col-md-4"><h3>Location:</h3>' +
+				'<div class="col-md-4"><address><h3>Location:</h3>' +
 				'<ul id="locationList" class="list-unstyled list-inline">' +
 				'<li><strong>Lat:&nbsp</strong>' + profileLocationLat + '</li>' +
-				'<li><strong>Long:&nbsp</strong>' + profileLocationLong + '</li></ul></div>' +
+				'<li><strong>Long:&nbsp</strong>' + profileLocationLong + '</li></ul><address>' +
+				
+				'</div>' +
 				'</section>';
 		});
-		mainSection += '</main>';
-
-		var navSection = '<nav role="main"><ul class="list-inline text-center">';
-		$.each(data, function (index, obj) {
-			var profileId = obj.id,
-				profileName = obj.name;
-
-			navSection += '<li><a data-id="' + profileId + '"  href="javascript:void(0);">' + profileName + '</a></li>';
-		});
-		navSection += '</ul></nav>';
+		mainSection += '</main>';		
+		
+		
 
 		//console.log(str);
 		$('header').append(navSection);
@@ -83,6 +83,7 @@ $(document).ready(function () {
 		var $navLinkId = $(this).attr('data-id'),
 			$x = $(this).parents('header').siblings('main').children('section');
 			
+			$('#greeterText').slideUp( 500 );
 			$x.slideUp( 1000 );
 			$($x[$navLinkId]).slideToggle( 1000 );
 	})
