@@ -21,6 +21,7 @@ nav ul > li:last-child {
     padding: 0 15px;
 }
 #greeterText {
+  border-bottom: 3px solid #E0E0E0;
   margin: auto 50px;
 }
 section {background: #fff;}
