@@ -1,4 +1,4 @@
 fadoop
 ======
 
-initial commit
+A simple client card using jQuery, Twitter Bootstrap and JSON.
